@@ -1,0 +1,109 @@
+@import '../../styles/main';
+
+.landing {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &__wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 30px;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+        color: $background-secondary;
+    }
+
+    &__error-message {
+        position: absolute;
+        color: $color-red;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 80%;
+        text-align: center;
+        font-size: 14px;
+
+        @media only screen and (max-width: 570px) {
+            bottom: 0;
+        }
+    }
+
+    &__form {
+        position: relative;
+        max-width: $max-width-default;
+        margin: 0 auto;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        background: $color-white;
+        border-radius: $border-radius-default;
+        box-shadow: 0px 10px 20px rgba(0,0,0,.5);
+    }
+
+    &__input,
+    &__select,
+    &__button {
+        display: block;
+        margin: 0 auto 15px;
+        min-width: 200px;
+        border: 1px solid $background-secondary;
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        color: $background-secondary;
+        background-color: $color-white;
+
+        &:focus,
+        &:hover {
+            outline: none;
+        }
+
+        &--disabled {
+            color: #888;
+        }
+    }
+
+    &__input {
+        &::placeholder {
+            color: $background-secondary;
+        }
+    }
+
+    &__button {
+        padding: 15px;
+        border: none;
+        box-shadow: 0 3px 10px rgba(0,0,0,.5);
+        text-transform: uppercase;
+        color: $color-white;
+        background-color: $background-secondary;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: $color-white;
+            color: $background-secondary;
+        }
+
+        &:active {
+            box-shadow: 0 1px 5px rgba(0,0,0,.5);
+            transform: translateY(2px);
+            background-color: $color-white;
+            color: $background-secondary;
+        }
+    }
+}
